@@ -247,16 +247,23 @@
 <!-- End Footer -->
 
 
-<script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbwD92rCowOHzYX0bWQGj0_QIBxZ6r6RI6zwEte8ONk4TK4BN8JbTnYM5z_ol9N-EXgpSw/exec'
-  const form = document.forms['order-form']
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwCcV0O1mNDcn-2wDp8plPLtINtg2fNBYuigB4TxYZNKtj294nXFVA2dfIfE16oWL1v/exec';
+      const form = document.getElementById('OrderForm');
 
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message))
-  })
-</script>
-</body>
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+          .then((response) => {
+            alert('Pendaftaran berhasil!');
+            form.reset();
+          })
+          .catch((error) => {
+            console.error('Error!', error.message);
+            alert('Terjadi kesalahan, coba lagi nanti.');
+          });
+      });
+    </script>
+   </body>
 </html>
