@@ -256,7 +256,7 @@
         e.preventDefault();
         fetch(scriptURL, { method: 'POST', body: new FormData(form) })
           .then((response) => {
-            alert('Pendaftaran berhasil!');
+            alert('Order berhasil dikirim!');
             form.reset();
           })
           .catch((error) => {
@@ -265,5 +265,5 @@
           });
       });
     </script>
-   </body>
+  </body>
 </html>
