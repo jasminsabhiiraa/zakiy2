@@ -1,0 +1,26 @@
+.jumbotron {
+  padding-top: 6rem;
+  background-color: #fd97cc;
+}
+
+#Products {
+  background-color: #fd97cc;
+  max-width: 20px 0;
+}
+
+section {
+  padding-top: 5 rem;
+}
+
+button {
+  background-color: #fd97cc; /* Warna pink */
+  color: black; /* Warna teks */
+  border: none; /* Hapus border */
+  padding: 10px 20px; /* Spasi di dalam tombol */
+  font-size: 16px; /* Ukuran teks */
+  border-radius: 5px; /* Sudut membulat */
+  cursor: pointer;
+}
+button :hover {
+  background-color: #ff66a3;
+}
