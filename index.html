@@ -182,18 +182,19 @@
               <label for="email" class="form-label">Email</label>
               <input type="text" class="form-control" id="email" name="email" />
             </div>
-            <div class="mb-3">
-              <label for="Products" class="form-label">Products</label>
-              <select name="product" class="form-select">
-                <option value=""></option>
-                <option value="Houseplants">Houseplants</option>
-                <option value="Flower-Pillow">Flower Pillow</option>
-                <option value="Adorable-Mirror">Adorable Mirror</option>
-                <option value="Flower-Carpet">Flower Carpet</option>
-                <option value="Acrylic-Rack">Acrylic Rack</option>
-                <option value="Aromatherapy-Candles">Aromatherapy Candles</option>
-              </select>
-            </div>
+           <div class="mb-3">
+  <label for="product" class="form-label">Produk</label>
+  <select id="product" name="product" class="form-select">
+    <option value=""></option>
+    <option value="Houseplants">Houseplants</option>
+    <option value="Flower Pillow">Flower Pillow</option>
+    <option value="Adorable Mirror">Adorable Mirror</option>
+    <option value="Flower Carpet">Flower Carpet</option>
+    <option value="Acrylic Rack">Acrylic Rack</option>
+    <option value="Aromatherapy Candles">Aromatherapy Candles</option>
+  </select>
+</div>
+
             <div class="mb-3">
               <label for="note" class="form-label">Notes</label>
               <input type="text" class="form-control" id="note" name="notes" placeholder="Masukkan alamat Anda" />
@@ -217,21 +218,24 @@
   <!-- End Order -->
        
   <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbzTsHYiQuLlACYlnuq8xIw8YL98JoSZLsXA-zZD07SgJUuoj2THLlGd03KWFrVmWkaN9Q/exec';
-    const form = document.getElementById('OrderForm');
-  
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-        .then((response) => {
-          alert('Order berhasil dikirim!');
-          form.reset();
-        })
-        .catch((error) => {
-          console.error('Error!', error.message);
-          alert('Terjadi kesalahan, coba lagi nanti.');
-        });
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwKv3pHLPnzJpI4hh4cnlzc8Av2RSsZJou_4Hh6R6_fgQLiQskJqIGbzwpKtiY6Zn3UNA/exec';
+   const form = document.getElementById('OrderForm');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+
+  fetch(scriptURL, { method: 'POST', body: formData })
+    .then((response) => {
+      alert('Pesanan berhasil dikirim!');
+      form.reset();
+    })
+    .catch((error) => {
+      console.error('Error!', error.message);
+      alert('Terjadi kesalahan, coba lagi nanti.');
     });
+});
   </script>
   </body>
 </html>
